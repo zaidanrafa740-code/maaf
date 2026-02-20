@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maaf</title>
+    <!-- Mengambil Font dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Latar Belakang Gradien */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden; /* Mencegah scroll jika animasi keluar batas */
+        }
+
+        /* Kartu Utama */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%; /* Responsive: lebar 90% di layar kecil */
+            animation: fadeIn 1.5s ease-out;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Animasi Muncul */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Bagian Bunga */
+        .flower {
+            font-size: 80px;
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: sway 3s ease-in-out infinite;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+        }
+
+        /* Animasi Bergoyang */
+        @keyframes sway {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        /* Tulisan Utama */
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #e05d5d;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Tulisan Paragraf */
+        p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        /* Tombol */
+        .btn {
+            background-color: #e05d5d;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(224, 93, 93, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #c04545;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(224, 93, 93, 0.5);
+        }
+        .btnp {
+            background-color: #e05d5d;
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(224, 93, 93, 0.3);
+        }
+
+        .btnp:hover {
+            background-color: #c04545;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(224, 93, 93, 0.5);
+        }
+
+        /* Efek Kelopak Jatuh (Decorative) */
+        .petal {
+            position: absolute;
+            top: -10px;
+            opacity: 0;
+            font-size: 20px;
+            animation: fall linear infinite;
+            z-index: 1;
+        }
+
+        /* Membuat beberapa variasi jatuh */
+        .petal:nth-child(1) { left: 10%; animation-duration: 10s; animation-delay: 0s; font-size: 15px; }
+        .petal:nth-child(2) { left: 30%; animation-duration: 12s; animation-delay: 2s; font-size: 25px; }
+        .petal:nth-child(3) { left: 50%; animation-duration: 8s; animation-delay: 1s; font-size: 10px; }
+        .petal:nth-child(4) { left: 70%; animation-duration: 15s; animation-delay: 4s; font-size: 20px; }
+        .petal:nth-child(5) { left: 90%; animation-duration: 9s; animation-delay: 3s; font-size: 18px; }
+
+        @keyframes fall {
+            0% { top: -10%; opacity: 1; transform: translateX(0) rotate(0deg); }
+            100% { top: 110%; opacity: 0; transform: translateX(100px) rotate(360deg); }
+        }
+
+        /* Responsif untuk layar sangat kecil (HP) */
+        @media (max-width: 400px) {
+            h1 { font-size: 1.7rem; }
+            .flower { font-size: 60px; }
+            .card { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Elemen Bunga Jatuh di Belakang -->
+    <div class="petal">🌸</div>
+    <div class="petal">🌺</div>
+    <div class="petal">🌼</div>
+    <div class="petal">🌷</div>
+    <div class="petal">🌹</div>
+
+    <!-- Kartu Utama -->
+    <div class="card">
+        <div class="flower">🌷</div>
+        <h1>i'm sorry seng:/</h1>
+        <p>
+            maaf uda buat bt, ini bunga buat kamu
+        </p>
+        <button class="btn" onclick="alert('maaci sayang uda maafin ❤️')">iya aku maafin sayang</button>
+        <button class="btnp" onclick="alert('yahh ko gitu:/')">gamau</button>
+    </div>
+
+</body>
+</html>
